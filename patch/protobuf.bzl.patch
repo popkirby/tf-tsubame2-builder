@@ -1,0 +1,12 @@
+diff --git a/external/protobuf/protobuf.bzl b/external/protobuf/protobuf.bzl
+index ac44820..6bcb5a7 100644
+--- a/external/protobuf/protobuf.bzl
++++ b/external/protobuf/protobuf.bzl
+@@ -92,6 +92,7 @@ def _proto_gen_impl(ctx):
+         arguments=args + import_flags + [s.path for s in srcs],
+         executable=ctx.executable.protoc,
+         mnemonic="ProtoCompile",
++        use_default_shell_env=True,
+     )
+ 
+   return struct(
